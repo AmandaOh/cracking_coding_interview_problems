@@ -1,36 +1,8 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RemoveDupsNoBuffer {
-
-    class LinkedListNode<T> {
-        LinkedListNode<T> next = null;
-        T data;
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null || getClass() != o.getClass()) return false;
-            LinkedListNode<T> that = (LinkedListNode<T>) o;
-            if (that.data != this.data) {
-                System.out.println("Expected: " + this.data + " but got: " + that.data);
-                return false;
-            }
-
-            if(this.next == null && that.next == null) {
-                return true;
-            }
-
-            return that.next.equals(this.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(next, data);
-        }
-    }
 
     private LinkedListNode<Integer> solve(LinkedListNode<Integer> list) {
         LinkedListNode<Integer> head = list;
